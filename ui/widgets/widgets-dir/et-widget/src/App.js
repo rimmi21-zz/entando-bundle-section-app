@@ -1,22 +1,13 @@
-import {getData} from "./integration/Integration";
-import {useState} from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Stats from "./stats";
 
 function App() {
-    const [payload, setPayload] = useState("")
-    async function callTheApi() {
-        setPayload((await getData()).data.payload)
-    }
-
-    return (
-        <>
-            <div>
-                <button onClick={callTheApi}>call the api</button>
-            </div>
-            <div>
-                <span>{payload}</span>
-            </div>
-        </>
-    )
+  return (
+    <div className="App">
+      <Stats />
+    </div>
+  );
 }
 
-export default App
+export default App;
